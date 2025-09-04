@@ -52,13 +52,13 @@ void drawRadar() {
   strokeWeight(2);
   stroke(98,245,31);
 
-  // Daireler (daha büyük ölçek)
+  
   arc(0,0,800,800,PI,TWO_PI);
   arc(0,0,600,600,PI,TWO_PI);
   arc(0,0,400,400,PI,TWO_PI);
   arc(0,0,200,200,PI,TWO_PI);
 
-  // Açı çizgileri
+  
   for(int a=0;a<=180;a+=30){
     line(0,0,400*cos(radians(a)),-400*sin(radians(a)));
   }
@@ -102,3 +102,4 @@ void drawText() {
   text("Angle: " + iAngle + "°", 30, height-20);
   text("Distance: " + noObject, 350, height-20);
 }
+
