@@ -18,20 +18,20 @@ void setup() {
 }
 
 void loop() {
-  // 10° → 170° tarama
+  
   for (int angle = 10; angle <= 170; angle += 4) {  
     myServo.write(angle);
-    delay(100);  // servo yetişsin diye bekleme
+    delay(100);  
     distance = calculateDistance();
     
-    // RADAR formatında veri gönder
+    
     Serial.print(angle);
     Serial.print(",");
     Serial.print(distance);
     Serial.print(".");
   }
 
-  // 170° → 10° geri dönüş
+  
   for (int angle = 170; angle >= 10; angle -= 4) {  
     myServo.write(angle);
     delay(100);  
@@ -44,7 +44,7 @@ void loop() {
   }
 }
 
-// Mesafe hesaplama fonksiyonu
+
 int calculateDistance() { 
   digitalWrite(trigPin, LOW); 
   delayMicroseconds(2);
@@ -57,7 +57,7 @@ int calculateDistance() {
   distance = duration * 0.034 / 2;
 
   if (distance == 0 || distance > 200) {  
-    distance = 200; // max 200 cm ölçsün
+    distance = 200; 
   }
 
   return distance;
